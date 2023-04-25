@@ -1,17 +1,16 @@
-FROM ubuntu:18.04
+FROM python:3.10
 
-ENV DEBIAN_FRONTEND=noninteractive
-RUN apt-get update
-RUN echo y | apt-get install locales
-RUN echo y | apt install build-essential
+WORKDIR /app
 
-    
+COPY requirements.txt /app/
 
-
-RUN pip3 install setuptools wheel yarl multidict
-COPY requirements.txt .
 RUN pip3 install -r requirements.txt
-RUN dpkg-reconfigure locales
+
 COPY . /app
+
+#set a default command
+
+
+
 
 CMD ["python3", "bot.py"]
