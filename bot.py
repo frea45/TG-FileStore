@@ -124,10 +124,10 @@ async def main(bot: Client, message: Message):
             return
 
         await message.reply_text(
-            text="**Choose an option from below:**",
+            text="**برای دریافت لینک کلیک کنید.**",
             reply_markup=InlineKeyboardMarkup([
-                [InlineKeyboardButton("Save in Batch", callback_data="addToBatchTrue")],
-                [InlineKeyboardButton("Get Sharable Link", callback_data="addToBatchFalse")]
+              # [InlineKeyboardButton("Save in Batch", callback_data="addToBatchTrue")], 
+                [InlineKeyboardButton("°دریافت لینک اشتراک گذاری فایل°", callback_data="addToBatchFalse")]
             ]),
             quote=True,
             disable_web_page_preview=True
