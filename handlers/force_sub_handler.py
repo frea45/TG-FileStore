@@ -44,15 +44,15 @@ async def handle_force_sub(bot: Client, cmd: Message):
             return 200
         await bot.send_message(
             chat_id=cmd.from_user.id,
-            text="**Please Join My Updates Channel to use this Bot!**\n\n"
-                 "Due to Overload, Only Channel Subscribers can use this Bot!",
+            text="**🔒 برای دریافت فایل ، نیاز است در کانال زیر عضو شوید**\n\n"
+                 "**⭕️بعد از عضو شدن /start کلیک کنید.**",
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton("🤖 Join Updates Channel", url=invite_link.invite_link)
+                        InlineKeyboardButton("📢 عضویت ⚡", url=invite_link.invite_link)
                     ],
                     [
-                        InlineKeyboardButton("🔄 Refresh 🔄", callback_data="refreshForceSub")
+                        InlineKeyboardButton("✅ عضو شدم", callback_data="refreshForceSub")
                     ]
                 ]
             )
