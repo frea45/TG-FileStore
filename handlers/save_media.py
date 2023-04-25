@@ -89,8 +89,8 @@ async def save_media_in_channel(bot: Client, editable: Message, message: Message
             disable_web_page_preview=True)
         share_link = f"https://t.me/{Config.BOT_USERNAME}?start=PredatorHackerzZ_{str_to_b64(file_er_id)}"
         await editable.edit(          
-            f"**⚡ لینک اشتراک گذاری فایل شما 👇: ** \n 📎 : {share_link} \n\n"
-            "Just Click the link to get your file!",
+            f"**⚡ لینک اشتراک گذاری فایل شما 👇 ** \n 📎 : {share_link} \n\n"
+            ".",
             reply_markup=InlineKeyboardMarkup(
                 [[InlineKeyboardButton("بازکردن لینک", url=share_link)]
                 ]
