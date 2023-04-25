@@ -97,7 +97,6 @@ async def save_media_in_channel(bot: Client, editable: Message, message: Message
             ),
             disable_web_page_preview=True
         )
-
                 return
     except FloodWait as sl:
         if sl.value > 45:
