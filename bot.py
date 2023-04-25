@@ -385,7 +385,7 @@ async def button(bot: Client, cmd: CallbackQuery):
                 return
             except Exception:
                 await cmd.message.edit(
-                    text="Something went Wrong. Contact my [Support Group](https://t.me/TeleRoid14).",
+                    text="Something went Wrong. Contact my [Support Group](https://t.me/dlchinHub).",
                     disable_web_page_preview=True
                 )
                 return
@@ -394,13 +394,8 @@ async def button(bot: Client, cmd: CallbackQuery):
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
                 [
-                    [
-                        InlineKeyboardButton("Support Group", url="https://t.me/TeleRoid14"),
+                    [                        
                         InlineKeyboardButton("Bots Channel", url="https://t.me/TeleRoidGroup")
-                    ],
-                    [
-                        InlineKeyboardButton("About Bot", callback_data="aboutbot"),
-                        InlineKeyboardButton("About Dev", callback_data="aboutdevs")
                     ]
                 ]
             )
