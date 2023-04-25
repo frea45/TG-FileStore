@@ -97,6 +97,13 @@ async def save_media_in_channel(bot: Client, editable: Message, message: Message
             ),
             disable_web_page_preview=True
         )
+forward_reply = await forward.reply(f"فایل بعد از 21 ثانیه دیگر حذف میشود 🔔")
+                        await asyncio.sleep(12)
+                        await forward_reply.edit(f"🔔 فایل بعد از 9 ثانیه دیگر حذف میشود.")
+                        await asyncio.sleep(10)
+                        await forward.delete()
+                        await forward_reply.edit(f"✅ دریافت دوباره فایل 👇\n 🤖 : {bot_url}",link_preview=True)
+                return
     except FloodWait as sl:
         if sl.value > 45:
             print(f"Sleep of {sl.value}s caused by FloodWait ...")
