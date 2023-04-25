@@ -71,7 +71,23 @@ async def start(bot: Client, cmd: Message):
         await cmd.reply_text(
             Config.HOME_TEXT.format(cmd.from_user.first_name, cmd.from_user.id),
             disable_web_page_preview=True,
-            
+            reply_markup=InlineKeyboardMarkup(
+                [
+                    [
+                        InlineKeyboardButton("BotsList Channel", url="https://t.me/TGRobot_List")
+                    ],
+                    [
+                        InlineKeyboardButton("About Bot", callback_data="aboutbot"),
+                        InlineKeyboardButton("About Dev", callback_data="aboutdevs"),
+                        InlineKeyboardButton("Close 🚪", callback_data="closeMessage")
+                    ],
+                    [
+                        InlineKeyboardButton("Bots Channel", url="https://t.me/TeleRoidGroup"),
+                        InlineKeyboardButton(" Support Group", url="https://t.me/TeleRoid14")
+                    ]
+                ]
+            )
+        )
     else:
         try:
             try:
@@ -335,7 +351,23 @@ async def button(bot: Client, cmd: CallbackQuery):
         await cmd.message.edit(
             Config.HOME_TEXT.format(cmd.message.chat.first_name, cmd.message.chat.id),
             disable_web_page_preview=True,
-            
+            reply_markup=InlineKeyboardMarkup(
+                [
+                    [
+                        InlineKeyboardButton("BotsList Channel", url="https://t.me/PayForBotz")
+                    ],
+                    [
+                        InlineKeyboardButton("About Bot", callback_data="aboutbot"),
+                        InlineKeyboardButton("About Dev", callback_data="aboutdevs"),
+                        InlineKeyboardButton("Close 🚪", callback_data="closeMessage")
+                    ],
+                    [
+                        InlineKeyboardButton("Support Group", url="https://t.me/TeleRoid14"),
+                        InlineKeyboardButton("Bots Channel", url="https://t.me/TeleRoidGroup")
+                    ]
+                ]
+            )
+        )
 
     elif "refreshForceSub" in cb_data:
         if Config.UPDATES_CHANNEL:
@@ -434,6 +466,7 @@ async def button(bot: Client, cmd: CallbackQuery):
     try:
         await cmd.answer()
     except QueryIdInvalid: pass
+
 
 
 Bot.run()
