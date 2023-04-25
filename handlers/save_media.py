@@ -90,7 +90,7 @@ async def save_batch_media_in_channel(bot: Client, editable: Message, message_id
 
         )
 
-        share_link = f"https://t.me/{Config.BOT_USERNAME}?start=_ir-{str_to_b64(str(SaveMessage.id))}"
+        share_link = f"https://t.me/{Config.BOT_USERNAME}?start=ir_{str_to_b64(str(SaveMessage.id))}"
 
         await editable.edit(
 
@@ -160,7 +160,7 @@ async def save_media_in_channel(bot: Client, editable: Message, message: Message
 
             disable_web_page_preview=True)
 
-        share_link = f"https://t.me/{Config.BOT_USERNAME}?start_ir-{str_to_b64(file_er_id)}"
+        share_link = f"https://t.me/{Config.BOT_USERNAME}?start=ir_{str_to_b64(file_er_id)}"
 
         await editable.edit(
 
