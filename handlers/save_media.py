@@ -90,21 +90,19 @@ async def save_batch_media_in_channel(bot: Client, editable: Message, message_id
 
         )
 
-        share_link = f"https://t.me/{Config.BOT_USERNAME}?start=PredatorHackerzZ_{str_to_b64(str(SaveMessage.id))}"
+        share_link = f"https://t.me/{Config.BOT_USERNAME}?start=_{str_to_b64(str(SaveMessage.id))}"
 
         await editable.edit(
 
-            f"**Batch Files Stored in my Database!**\n\nHere is the Permanent Link of your files: {share_link} \n\n"
+            f"**⚡ لینک اشتراک گذاری فایل شما 👇 **\n📎 : {share_link} \n"
 
-            f"Just Click the link to get your files!",
+            f"🌸",
 
             reply_markup=InlineKeyboardMarkup(
 
-                [[InlineKeyboardButton("Open Link", url=share_link)],
+                [[InlineKeyboardButton("بازکردن لینک", url=share_link)]
 
-                 [InlineKeyboardButton("Bots Channel", url="https://t.me/TeleRoidGroup"),
-
-                  InlineKeyboardButton("Support Group", url="https://t.me/TeleRoid14")]]
+                 ]
 
             ),
 
@@ -162,7 +160,7 @@ async def save_media_in_channel(bot: Client, editable: Message, message: Message
 
             disable_web_page_preview=True)
 
-        share_link = f"https://t.me/{Config.BOT_USERNAME}?start=PredatorHackerzZ_{str_to_b64(file_er_id)}"
+        share_link = f"https://t.me/{Config.BOT_USERNAME}?start_{str_to_b64(file_er_id)}"
 
         await editable.edit(
 
@@ -174,11 +172,9 @@ async def save_media_in_channel(bot: Client, editable: Message, message: Message
 
             reply_markup=InlineKeyboardMarkup(
 
-                [[InlineKeyboardButton("Open Link", url=share_link)],
+                [[InlineKeyboardButton("Open Link", url=share_link)]
 
-                 [InlineKeyboardButton("Bots Channel", url="https://t.me/TeleRoidGroup"),
-
-                  InlineKeyboardButton("Support Group", url="https://t.me/TeleRoid14")]]
+                ]
 
             ),
 
